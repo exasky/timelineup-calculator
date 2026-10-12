@@ -1,0 +1,173 @@
+{
+  "rootNodeId": "global_damage_1",
+  "stages": [
+    {
+      "stage": 1,
+      "leftBranch": [
+        "crowd_damage_1",
+        "crowd_crit_damage_mult_1",
+        "crowd_double_shot_chance_1"
+      ],
+      "rightBranch": [
+        "hero_damage_1",
+        "hero_crit_damage_mult_1",
+        "hero_double_shot_chance_1"
+      ],
+      "junctionNodeId": "warrior_upgrade_max_level_increase_1"
+    },
+    {
+      "stage": 2,
+      "leftBranch": [
+        "champion_damage_1",
+        "champion_crit_damage_mult_1",
+        "champion_double_shot_chance_1"
+      ],
+      "rightBranch": [
+        "pet_damage_1",
+        "pet_crit_damage_mult_1",
+        "pet_double_shot_chance_1"
+      ],
+      "junctionNodeId": "battle_damage_multiplier_1"
+    },
+    {
+      "stage": 3,
+      "leftBranch": [
+        "crowd_damage_2",
+        "crowd_critical_hit_chance_1",
+        "crowd_triple_shot_chance_1"
+      ],
+      "rightBranch": [
+        "pet_damage_2",
+        "pet_critical_hit_chance_1",
+        "pet_triple_shot_chance_1"
+      ],
+      "junctionNodeId": "time_machine_start_level_increase_1"
+    },
+    {
+      "stage": 4,
+      "leftBranch": [
+        "champion_damage_2",
+        "champion_critical_hit_chance_1",
+        "champion_triple_shot_chance_1"
+      ],
+      "rightBranch": [
+        "hero_damage_2",
+        "hero_critical_hit_chance_1",
+        "hero_triple_shot_chance_1"
+      ],
+      "junctionNodeId": "dungeon_damage_multiplier_1"
+    },
+    {
+      "stage": 5,
+      "leftBranch": [
+        "pet_damage_3",
+        "pet_crit_damage_mult_2",
+        "pet_double_shot_chance_2"
+      ],
+      "rightBranch": [
+        "hero_damage_3",
+        "hero_crit_damage_mult_2",
+        "hero_double_shot_chance_2"
+      ],
+      "junctionNodeId": "warrior_upgrade_max_level_increase_2"
+    },
+    {
+      "stage": 6,
+      "leftBranch": [
+        "champion_damage_3",
+        "champion_crit_damage_mult_2",
+        "champion_double_shot_chance_2"
+      ],
+      "rightBranch": [
+        "crowd_damage_3",
+        "crowd_crit_damage_mult_2",
+        "crowd_double_shot_chance_2"
+      ],
+      "junctionNodeId": "tower_damage_multiplier_2"
+    },
+    {
+      "stage": 7,
+      "leftBranch": [
+        "crowd_damage_4",
+        "crowd_critical_hit_chance_2",
+        "crowd_triple_shot_chance_2"
+      ],
+      "rightBranch": [
+        "hero_damage_4",
+        "hero_critical_hit_chance_2",
+        "hero_triple_shot_chance_2"
+      ],
+      "junctionNodeId": "time_machine_start_level_increase_2"
+    },
+    {
+      "stage": 8,
+      "leftBranch": [
+        "champion_damage_4",
+        "champion_critical_hit_chance_2",
+        "champion_triple_shot_chance_2"
+      ],
+      "rightBranch": [
+        "pet_damage_4",
+        "pet_critical_hit_chance_2",
+        "pet_triple_shot_chance_2"
+      ],
+      "junctionNodeId": "hero_damage_multiplier_1"
+    },
+    {
+      "stage": 9,
+      "leftBranch": [
+        "crowd_damage_5",
+        "crowd_crit_damage_mult_3",
+        "crowd_double_shot_chance_3"
+      ],
+      "rightBranch": [
+        "pet_damage_5",
+        "pet_crit_damage_mult_3",
+        "pet_double_shot_chance_3"
+      ],
+      "junctionNodeId": "warrior_upgrade_max_level_increase_3"
+    },
+    {
+      "stage": 10,
+      "leftBranch": [
+        "champion_damage_5",
+        "champion_crit_damage_mult_3",
+        "champion_double_shot_chance_3"
+      ],
+      "rightBranch": [
+        "hero_damage_5",
+        "hero_crit_damage_mult_3",
+        "hero_double_shot_chance_3"
+      ],
+      "junctionNodeId": "max_pickaxe_limit_increase_1"
+    },
+    {
+      "stage": 11,
+      "leftBranch": [
+        "pet_damage_6",
+        "pet_crit_hit_chance_3",
+        "pet_triple_shot_chance_3"
+      ],
+      "rightBranch": [
+        "hero_damage_6",
+        "hero_crit_hit_chance_3",
+        "hero_triple_shot_chance_3"
+      ],
+      "junctionNodeId": "time_machine_start_level_increase_3"
+    },
+    {
+      "stage": 12,
+      "leftBranch": [
+        "champion_damage_6",
+        "champion_crit_hit_chance_3",
+        "champion_triple_shot_chance_3"
+      ],
+      "rightBranch": [
+        "crowd_damage_6",
+        "crowd_crit_hit_chance_3",
+        "crowd_triple_shot_chance_3"
+      ],
+      "junctionNodeId": null
+    }
+  ]
+}

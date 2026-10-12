@@ -69,70 +69,74 @@
     </section>
 
     <section class="mt-6" [attr.aria-labelledby]="'heading-' + selectedCategory()">
-      <div class="mb-4 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h2
-            class="font-display text-2xl font-bold text-white"
-            [id]="'heading-' + selectedCategory()"
-          >
-            {{ selectedCategoryLabel }}
-          </h2>
-          <p class="mt-1 text-xs text-slate-500">
-            @if (selectedCategory() === 'cards') {
-              Primary stats lock at their cap; excess levels convert to damage.
-            } @else {
-              Estimated contribution by level and equipped special power.
-            }
+      @if (selectedCategory() === 'talents') {
+        <app-talent-tree />
+      } @else {
+        <div class="mb-4 flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2
+              class="font-display text-2xl font-bold text-white"
+              [id]="'heading-' + selectedCategory()"
+            >
+              {{ selectedCategoryLabel }}
+            </h2>
+            <p class="mt-1 text-xs text-slate-500">
+              @if (selectedCategory() === 'cards') {
+                Primary stats lock at their cap; excess levels convert to damage.
+              } @else {
+                Estimated contribution by level and equipped special power.
+              }
+            </p>
+          </div>
+          <p class="text-xs text-slate-400">
+            <span class="font-semibold text-emerald-200">{{
+              categoryPowers()[selectedCategory()] | number: '1.0-0'
+            }}</span>
+            category power
           </p>
         </div>
-        <p class="text-xs text-slate-400">
-          <span class="font-semibold text-emerald-200">{{
-            categoryPowers()[selectedCategory()] | number: '1.0-0'
-          }}</span>
-          category power
-        </p>
-      </div>
 
-      @if (selectedCategory() === 'cards') {
+        @if (selectedCategory() === 'cards') {
+          <div
+            class="mb-4 flex flex-wrap gap-x-5 gap-y-2 border-y border-white/[0.07] py-3 text-[10px] font-semibold uppercase tracking-[0.08em] text-slate-500"
+          >
+            @for (bonus of cardBonusEntries(); track bonus.stat) {
+              <span
+                >{{ bonus.label }}
+                <strong class="ml-1 text-slate-200">{{ bonus.value }}</strong></span
+              >
+            } @empty {
+              <span>No active card bonuses</span>
+            }
+          </div>
+        }
+
         <div
-          class="mb-4 flex flex-wrap gap-x-5 gap-y-2 border-y border-white/[0.07] py-3 text-[10px] font-semibold uppercase tracking-[0.08em] text-slate-500"
+          class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+          role="tabpanel"
+          [id]="'items-' + selectedCategory()"
+          [attr.aria-labelledby]="'heading-' + selectedCategory()"
         >
-          @for (bonus of cardBonusEntries(); track bonus.stat) {
-            <span
-              >{{ bonus.label }}
-              <strong class="ml-1 text-slate-200">{{ bonus.value }}</strong></span
-            >
+          @for (entry of visibleItems(); track entry.item.id; let index = $index) {
+            <app-item-card
+              [item]="entry.item"
+              [level]="entry.level"
+              [enabled]="entry.enabled"
+              [power]="entry.power"
+              [cardCalculation]="entry.cardCalculation"
+              [style.animation-delay.ms]="index * 45"
+              (levelChange)="updateLevel(entry.item.id, $event)"
+              (enabledChange)="toggleItem(entry.item.id)"
+            />
           } @empty {
-            <span>No active card bonuses</span>
+            <p
+              class="col-span-full rounded-lg border border-dashed border-white/10 p-8 text-center text-sm text-slate-500"
+            >
+              No entries in this category yet.
+            </p>
           }
         </div>
       }
-
-      <div
-        class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-        role="tabpanel"
-        [id]="'items-' + selectedCategory()"
-        [attr.aria-labelledby]="'heading-' + selectedCategory()"
-      >
-        @for (entry of visibleItems(); track entry.item.id; let index = $index) {
-          <app-item-card
-            [item]="entry.item"
-            [level]="entry.level"
-            [enabled]="entry.enabled"
-            [power]="entry.power"
-            [cardCalculation]="entry.cardCalculation"
-            [style.animation-delay.ms]="index * 45"
-            (levelChange)="updateLevel(entry.item.id, $event)"
-            (enabledChange)="toggleItem(entry.item.id)"
-          />
-        } @empty {
-          <p
-            class="col-span-full rounded-lg border border-dashed border-white/10 p-8 text-center text-sm text-slate-500"
-          >
-            No entries in this category yet.
-          </p>
-        }
-      </div>
     </section>
 
     <footer

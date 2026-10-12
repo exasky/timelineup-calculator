@@ -1,0 +1,109 @@
+<section class="talent-tree-view" aria-labelledby="talent-tree-title">
+  <header class="talent-tree-header">
+    <div>
+      <p class="eyebrow">Progression map</p>
+      <h3 id="talent-tree-title">Talent Tree</h3>
+      <p class="tree-subtitle">Follow either path through all {{ nodes().length }} talents.</p>
+    </div>
+    <div class="rank-total" aria-live="polite">
+      <span>Ranks assigned</span>
+      <strong>{{ ranksAssigned() }}</strong>
+    </div>
+  </header>
+
+  @if (tree()) {
+    @if (talentBonuses().length > 0) {
+      <div
+        class="flex flex-wrap gap-x-5 gap-y-2 border-t border-slate-300/10 bg-[#111a21] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.08em] text-slate-400"
+        aria-label="Configured talent bonuses"
+      >
+        @for (bonus of talentBonuses(); track bonus.target + ':' + bonus.statType) {
+          <span
+            >{{ bonus.target }} {{ statLabel(bonus.statType) }}
+            <strong class="ml-1 text-emerald-200">{{
+              formatTalentValue(bonus.value, bonus.isPercentage)
+            }}</strong></span
+          >
+        }
+      </div>
+    }
+    @if (selectedNode(); as selected) {
+      <section class="selected-talent" aria-live="polite" aria-label="Selected talent details">
+        <div class="selected-talent-copy">
+          <p class="eyebrow">
+            {{ selected.node.target }} · {{ statLabel(selected.node.statType) }}
+          </p>
+          <h4>{{ selected.node.name }}</h4>
+          @if (selected.node.valuePerLevel === null) {
+            <p>Per-rank value is not configured yet.</p>
+          } @else {
+            <p>
+              {{ formatTalentValue(selected.node.valuePerLevel, selected.node.isPercentage) }} per
+              rank · current
+              {{ formatTalentValue(selectedNodeBonus() ?? 0, selected.node.isPercentage) }}
+            </p>
+          }
+        </div>
+        <div class="selected-talent-controls">
+          <div class="rank-control" [attr.aria-label]="selected.node.name + ' rank controls'">
+            <button
+              type="button"
+              [disabled]="selectedLevel() <= 0"
+              [attr.aria-label]="'Remove one rank from ' + selected.node.name"
+              (click)="adjustSelectedLevel(-1)"
+            >
+              <span aria-hidden="true">−</span>
+            </button>
+            <strong
+              >{{ selectedLevel() }}<span>/{{ selected.node.maxLevel }}</span></strong
+            >
+            <button
+              type="button"
+              [disabled]="selectedLevel() >= selected.node.maxLevel"
+              [attr.aria-label]="'Add one rank to ' + selected.node.name"
+              (click)="adjustSelectedLevel(1)"
+            >
+              <span aria-hidden="true">+</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    }
+    <div class="talent-tree-board" role="group" aria-label="Talent progression nodes">
+      <svg
+        class="talent-tree-links"
+        [attr.viewBox]="'0 0 100 ' + treeHeight()"
+        [style.height.px]="treeHeight()"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        @for (link of links(); track link.id) {
+          <line [attr.x1]="link.x1" [attr.y1]="link.y1" [attr.x2]="link.x2" [attr.y2]="link.y2" />
+        }
+      </svg>
+
+      @for (entry of nodes(); track entry.node.id) {
+        <button
+          class="talent-node"
+          [class.talent-node--core]="entry.kind !== 'branch'"
+          [class.talent-node--selected]="selectedNodeId() === entry.node.id"
+          [style.left.%]="entry.x"
+          [style.top.px]="entry.y"
+          [attr.aria-label]="
+            entry.node.name + ', rank ' + levelFor(entry.node) + ' of ' + entry.node.maxLevel
+          "
+          [attr.aria-pressed]="selectedNodeId() === entry.node.id"
+          type="button"
+          (click)="selectNode(entry)"
+        >
+          <span class="talent-node-symbol" aria-hidden="true">{{
+            symbolFor(entry.node.name)
+          }}</span>
+          <span class="talent-node-rank">{{ levelFor(entry.node) }}/{{ entry.node.maxLevel }}</span>
+        </button>
+      }
+    </div>
+  } @else {
+    <p class="talent-tree-loading" role="status">Loading talent tree...</p>
+  }
+</section>

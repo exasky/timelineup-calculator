@@ -5,12 +5,13 @@ import { BuildStateService } from '../../core/services/build-state.service';
 import { CategoryTabsComponent } from './components/category-tabs/category-tabs.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
 import { PowerBannerComponent } from './components/power-banner/power-banner.component';
+import { TalentTreeComponent } from '../talents/components/talent-tree/talent-tree.component';
 import { CalculatorEngineService } from './services/calculator-engine.service';
 import { BuildCategory } from './models/calculator-item.model';
 
 @Component({
   selector: 'app-calculator-dashboard',
-  imports: [DecimalPipe, PowerBannerComponent, CategoryTabsComponent, ItemCardComponent],
+  imports: [DecimalPipe, PowerBannerComponent, CategoryTabsComponent, ItemCardComponent, TalentTreeComponent],
   templateUrl: './calculator-dashboard.component.html',
   styleUrl: './calculator-dashboard.component.scss',
 })
@@ -19,7 +20,7 @@ export class CalculatorDashboardComponent {
   private readonly calculator = inject(CalculatorEngineService);
 
   readonly categories = this.calculator.categories;
-  readonly selectedCategory = signal<BuildCategory>('heroes');
+  readonly selectedCategory = signal<BuildCategory>('cards');
   readonly shareStatus = signal('');
   readonly buildStateCount = computed(() => this.calculator.items().length);
   readonly enabledCount = this.calculator.enabledCount;

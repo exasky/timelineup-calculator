@@ -10,23 +10,29 @@ import { CHAMPIONS } from '../../champions/data/champions.data';
 import { HEROES } from '../../heroes/data/heroes.data';
 import { MOUNTS } from '../../mounts/data/mounts.data';
 import { PETS } from '../../pets/data/pets.data';
-import { TALENTS } from '../../talents/data/talents.data';
+import { flattenTalentTree, TalentNodeDefinition } from '../../talents/models/talent-tree.model';
+import { TalentsDataService } from '../../talents/services/talents-data.service';
 
 @Injectable({ providedIn: 'root' })
 export class CalculatorCatalogService {
+  private readonly talentsData = inject(TalentsDataService);
   private readonly cards = toSignal(
     inject(CardsDataService).loadCards().pipe(catchError(() => of([] as Card[]))),
     { initialValue: [] as Card[] },
   );
 
   readonly categories = BUILD_CATEGORIES;
+  readonly talents = computed(() => {
+    const tree = this.talentsData.tree();
+    return tree ? flattenTalentTree(tree).map((node) => this.toTalentCalculatorItem(node)) : [];
+  });
   readonly items = computed<CalculatorItem[]>(() => [
     ...HEROES,
     ...CHAMPIONS,
     ...PETS,
     ...MOUNTS,
     ...this.cards().map((card) => this.toCalculatorItem(card)),
-    ...TALENTS,
+    ...this.talents(),
   ]);
 
   itemsForCategory(category: BuildCategory): CalculatorItem[] {
@@ -51,6 +57,25 @@ export class CalculatorCatalogService {
       emblem: emblem || 'CA',
       category: 'cards',
       card,
+    };
+  }
+
+  private toTalentCalculatorItem(node: TalentNodeDefinition): CalculatorItem {
+    const emblem = node.name
+      .split(/\s+/)
+      .map((word) => /^\d+$/.test(word) ? word : word[0] ?? '')
+      .join('')
+      .slice(0, 4)
+      .toUpperCase();
+
+    return {
+      ...node,
+      level: 0,
+      basePower: 0,
+      powerScaling: 1,
+      role: 'Talent',
+      emblem: emblem || 'TN',
+      category: 'talents',
     };
   }
 }

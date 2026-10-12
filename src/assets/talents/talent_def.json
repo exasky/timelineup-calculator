@@ -1,0 +1,758 @@
+[
+  {
+    "id": "global_damage_1",
+    "name": "Global Damage 1",
+    "maxLevel": 1,
+    "statType": "damage",
+    "target": "global",
+    "valuePerLevel": 10,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_damage_1",
+    "name": "Crowd Damage 1",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "crowd",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_crit_damage_mult_1",
+    "name": "Crowd Crit Damage Mult 1",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "crowd",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_double_shot_chance_1",
+    "name": "Crowd Double Shot Chance 1",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "crowd",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_damage_1",
+    "name": "Hero Damage 1",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "hero",
+    "valuePerLevel": 20,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_crit_damage_mult_1",
+    "name": "Hero Crit Damage Mult 1",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "hero",
+    "valuePerLevel": 20,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_double_shot_chance_1",
+    "name": "Hero Double Shot Chance 1",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "hero",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "warrior_upgrade_max_level_increase_1",
+    "name": "Warrior Upgrade Max Level Increase 1",
+    "maxLevel": 2,
+    "statType": "warrior_max_level_increase",
+    "target": "utility",
+    "valuePerLevel": 1,
+    "isPercentage": false
+  },
+  {
+    "id": "champion_damage_1",
+    "name": "Champion Damage 1",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "champion",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_crit_damage_mult_1",
+    "name": "Champion Crit Damage Mult 1",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "champion",
+    "valuePerLevel": 10,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_double_shot_chance_1",
+    "name": "Champion Double Shot Chance 1",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "champion",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_damage_1",
+    "name": "Pet Damage 1",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "pet",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_crit_damage_mult_1",
+    "name": "Pet Crit Damage Mult 1",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "pet",
+    "valuePerLevel": 10,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_double_shot_chance_1",
+    "name": "Pet Double Shot Chance 1",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "pet",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "battle_damage_multiplier_1",
+    "name": "Battle Damage Multiplier 1",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "battle",
+    "valuePerLevel": 300,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_damage_2",
+    "name": "Crowd Damage 2",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "crowd",
+    "valuePerLevel": 10,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_critical_hit_chance_1",
+    "name": "Crowd Critical Hit Chance 1",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "crowd",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_triple_shot_chance_1",
+    "name": "Crowd Triple Shot Chance 1",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "crowd",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_damage_2",
+    "name": "Pet Damage 2",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "pet",
+    "valuePerLevel": 10,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_critical_hit_chance_1",
+    "name": "Pet Critical Hit Chance 1",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "pet",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_triple_shot_chance_1",
+    "name": "Pet Triple Shot Chance 1",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "pet",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "time_machine_start_level_increase_1",
+    "name": "Time Machine Start Level Increase 1",
+    "maxLevel": 2,
+    "statType": "time_machine_start_level",
+    "target": "utility",
+    "valuePerLevel": 1,
+    "isPercentage": false
+  },
+  {
+    "id": "champion_damage_2",
+    "name": "Champion Damage 2",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "champion",
+    "valuePerLevel": 10,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_critical_hit_chance_1",
+    "name": "Champion Critical Hit Chance 1",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "champion",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_triple_shot_chance_1",
+    "name": "Champion Triple Shot Chance 1",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "champion",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_damage_2",
+    "name": "Hero Damage 2",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "hero",
+    "valuePerLevel": 50,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_critical_hit_chance_1",
+    "name": "Hero Critical Hit Chance 1",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "hero",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_triple_shot_chance_1",
+    "name": "Hero Triple Shot Chance 1",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "hero",
+    "valuePerLevel": 1,
+    "isPercentage": true
+  },
+  {
+    "id": "dungeon_damage_multiplier_1",
+    "name": "Dungeon Damage Multiplier 1",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "dungeon",
+    "valuePerLevel": 300,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_damage_3",
+    "name": "Pet Damage 3",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "pet",
+    "valuePerLevel": 50,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_crit_damage_mult_2",
+    "name": "Pet Crit Damage Mult 2",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "pet",
+    "valuePerLevel": 100,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_double_shot_chance_2",
+    "name": "Pet Double Shot Chance 2",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "pet",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_damage_3",
+    "name": "Hero Damage 3",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "hero",
+    "valuePerLevel": 80,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_crit_damage_mult_2",
+    "name": "Hero Crit Damage Mult 2",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "hero",
+    "valuePerLevel": 100,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_double_shot_chance_2",
+    "name": "Hero Double Shot Chance 2",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "hero",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "warrior_upgrade_max_level_increase_2",
+    "name": "Warrior Upgrade Max Level Increase 2",
+    "maxLevel": 2,
+    "statType": "warrior_max_level_increase",
+    "target": "utility",
+    "valuePerLevel": 1,
+    "isPercentage": false
+  },
+  {
+    "id": "champion_damage_3",
+    "name": "Champion Damage 3",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "champion",
+    "valuePerLevel": 25,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_crit_damage_mult_2",
+    "name": "Champion Crit Damage Mult 2",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "champion",
+    "valuePerLevel": 50,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_double_shot_chance_2",
+    "name": "Champion Double Shot Chance 2",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "champion",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_damage_3",
+    "name": "Crowd Damage 3",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "crowd",
+    "valuePerLevel": 25,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_crit_damage_mult_2",
+    "name": "Crowd Crit Damage Mult 2",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "crowd",
+    "valuePerLevel": 50,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_double_shot_chance_2",
+    "name": "Crowd Double Shot Chance 2",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "crowd",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "tower_damage_multiplier_2",
+    "name": "Tower Damage Multiplier 2",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "tower",
+    "valuePerLevel": 300,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_damage_4",
+    "name": "Crowd Damage 4",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "crowd",
+    "valuePerLevel": 40,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_critical_hit_chance_2",
+    "name": "Crowd Critical Hit Chance 2",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "crowd",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_triple_shot_chance_2",
+    "name": "Crowd Triple Shot Chance 2",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "crowd",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_damage_4",
+    "name": "Hero Damage 4",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "hero",
+    "valuePerLevel": 100,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_critical_hit_chance_2",
+    "name": "Hero Critical Hit Chance 2",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "hero",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_triple_shot_chance_2",
+    "name": "Hero Triple Shot Chance 2",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "hero",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "time_machine_start_level_increase_2",
+    "name": "Time Machine Start Level Increase 2",
+    "maxLevel": 2,
+    "statType": "time_machine_start_level",
+    "target": "utility",
+    "valuePerLevel": 1,
+    "isPercentage": false
+  },
+  {
+    "id": "champion_damage_4",
+    "name": "Champion Damage 4",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "champion",
+    "valuePerLevel": 40,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_critical_hit_chance_2",
+    "name": "Champion Critical Hit Chance 2",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "champion",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_triple_shot_chance_2",
+    "name": "Champion Triple Shot Chance 2",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "champion",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_damage_4",
+    "name": "Pet Damage 4",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "pet",
+    "valuePerLevel": 80,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_critical_hit_chance_2",
+    "name": "Pet Critical Hit Chance 2",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "pet",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_triple_shot_chance_2",
+    "name": "Pet Triple Shot Chance 2",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "pet",
+    "valuePerLevel": 3,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_damage_multiplier_1",
+    "name": "Hero Damage Multiplier 1",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "hero",
+    "valuePerLevel": 1000,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_damage_5",
+    "name": "Crowd Damage 5",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "crowd",
+    "valuePerLevel": 80,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_crit_damage_mult_3",
+    "name": "Crowd Crit Damage Mult 3",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "crowd",
+    "valuePerLevel": 160,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_double_shot_chance_3",
+    "name": "Crowd Double Shot Chance 3",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "crowd",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_damage_5",
+    "name": "Pet Damage 5",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "pet",
+    "valuePerLevel": 120,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_crit_damage_mult_3",
+    "name": "Pet Crit Damage Mult 3",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "pet",
+    "valuePerLevel": 100,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_double_shot_chance_3",
+    "name": "Pet Double Shot Chance 3",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "pet",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "warrior_upgrade_max_level_increase_3",
+    "name": "Warrior Upgrade Max Level Increase 3",
+    "maxLevel": 2,
+    "statType": "warrior_max_level_increase",
+    "target": "utility",
+    "valuePerLevel": 1,
+    "isPercentage": false
+  },
+  {
+    "id": "champion_damage_5",
+    "name": "Champion Damage 5",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "champion",
+    "valuePerLevel": 80,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_crit_damage_mult_3",
+    "name": "Champion Crit Damage Mult 3",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "champion",
+    "valuePerLevel": 300,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_double_shot_chance_3",
+    "name": "Champion Double Shot Chance 3",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "champion",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_damage_5",
+    "name": "Hero Damage 5",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "hero",
+    "valuePerLevel": 150,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_crit_damage_mult_3",
+    "name": "Hero Crit Damage Mult 3",
+    "maxLevel": 5,
+    "statType": "crit_damage_multiplier",
+    "target": "hero",
+    "valuePerLevel": 300,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_double_shot_chance_3",
+    "name": "Hero Double Shot Chance 3",
+    "maxLevel": 5,
+    "statType": "double_shot_chance",
+    "target": "hero",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "max_pickaxe_limit_increase_1",
+    "name": "Max Pickaxe Limit Increase 1",
+    "maxLevel": 5,
+    "statType": "max_pickaxe_limit",
+    "target": "utility",
+    "valuePerLevel": 10,
+    "isPercentage": false
+  },
+  {
+    "id": "pet_damage_6",
+    "name": "Pet Damage 6",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "pet",
+    "valuePerLevel": 160,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_crit_hit_chance_3",
+    "name": "Pet Crit Hit Chance 3",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "pet",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "pet_triple_shot_chance_3",
+    "name": "Pet Triple Shot Chance 3",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "pet",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_damage_6",
+    "name": "Hero Damage 6",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "hero",
+    "valuePerLevel": 250,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_crit_hit_chance_3",
+    "name": "Hero Crit Hit Chance 3",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "hero",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "hero_triple_shot_chance_3",
+    "name": "Hero Triple Shot Chance 3",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "hero",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "time_machine_start_level_increase_3",
+    "name": "Time Machine Start Level Increase 3",
+    "maxLevel": 2,
+    "statType": "time_machine_start_level",
+    "target": "utility",
+    "valuePerLevel": 1,
+    "isPercentage": false
+  },
+  {
+    "id": "champion_damage_6",
+    "name": "Champion Damage 6",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "champion",
+    "valuePerLevel": 150,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_crit_hit_chance_3",
+    "name": "Champion Crit Hit Chance 3",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "champion",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "champion_triple_shot_chance_3",
+    "name": "Champion Triple Shot Chance 3",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "champion",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_damage_6",
+    "name": "Crowd Damage 6",
+    "maxLevel": 5,
+    "statType": "damage",
+    "target": "crowd",
+    "valuePerLevel": 160,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_crit_hit_chance_3",
+    "name": "Crowd Crit Hit Chance 3",
+    "maxLevel": 5,
+    "statType": "crit_chance",
+    "target": "crowd",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  },
+  {
+    "id": "crowd_triple_shot_chance_3",
+    "name": "Crowd Triple Shot Chance 3",
+    "maxLevel": 5,
+    "statType": "triple_shot_chance",
+    "target": "crowd",
+    "valuePerLevel": 5,
+    "isPercentage": true
+  }
+]
