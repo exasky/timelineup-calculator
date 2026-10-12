@@ -1,0 +1,92 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.item-card {
+  animation: card-enter 420ms both cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease,
+    opacity 160ms ease;
+}
+
+.item-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--item-accent) 35%, transparent);
+}
+
+.item-card--disabled {
+  opacity: 0.58;
+}
+
+.item-emblem {
+  color: var(--item-accent);
+  border-color: color-mix(in srgb, var(--item-accent) 30%, transparent);
+  background: color-mix(in srgb, var(--item-accent) 10%, #111713);
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+}
+
+.item-emblem-image {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.special-power {
+  border-top-color: color-mix(in srgb, var(--item-accent) 20%, transparent);
+}
+
+.rarity-badge {
+  color: var(--rarity-accent);
+  border-color: color-mix(in srgb, var(--rarity-accent) 35%, transparent);
+  background: color-mix(in srgb, var(--rarity-accent) 8%, #111713);
+}
+
+.card-details {
+  border-top-color: color-mix(in srgb, var(--rarity-accent) 24%, transparent);
+}
+
+.item-switch:focus-within .switch-track {
+  outline: 2px solid #a7f3d0;
+  outline-offset: 2px;
+}
+
+.switch-thumb {
+  pointer-events: none;
+}
+
+.level-input::-webkit-inner-spin-button,
+.level-input::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.level-input {
+  appearance: textfield;
+}
+
+.level-step:focus-visible {
+  outline: 2px solid #a7f3d0;
+  outline-offset: -3px;
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item-card {
+    animation: none;
+    transition: none;
+  }
+}

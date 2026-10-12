@@ -1,0 +1,42 @@
+[
+  {
+    "id": "chrono-blade",
+    "name": "Chrono Blade",
+    "description": "Sharpen your strike across every timeline.",
+    "maxLevel": 10,
+    "baseCost": 50,
+    "costMultiplier": 1.35,
+    "bonusPerLevel": 8,
+    "category": "attack"
+  },
+  {
+    "id": "temporal-shield",
+    "name": "Temporal Shield",
+    "description": "Absorb damage by stabilizing your personal timeline.",
+    "maxLevel": 10,
+    "baseCost": 40,
+    "costMultiplier": 1.3,
+    "bonusPerLevel": 12,
+    "category": "defense"
+  },
+  {
+    "id": "echo-miner",
+    "name": "Echo Miner",
+    "description": "Collect resources from nearby timeline echoes.",
+    "maxLevel": 8,
+    "baseCost": 75,
+    "costMultiplier": 1.45,
+    "bonusPerLevel": 5,
+    "category": "economy"
+  },
+  {
+    "id": "rift-engine",
+    "name": "Rift Engine",
+    "description": "Reduce the time needed to travel between eras.",
+    "maxLevel": 5,
+    "baseCost": 120,
+    "costMultiplier": 1.6,
+    "bonusPerLevel": 3,
+    "category": "utility"
+  }
+]

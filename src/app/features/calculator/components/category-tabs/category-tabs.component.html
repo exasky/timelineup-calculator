@@ -1,0 +1,29 @@
+<nav
+  class="category-list flex gap-2 overflow-x-auto pb-2"
+  role="tablist"
+  aria-label="Build item categories"
+>
+  @for (category of categories(); track category.id) {
+    <button
+      class="category-tab group flex min-w-[122px] shrink-0 items-center gap-2.5 rounded-md border border-white/10 bg-[#151c19] px-3 py-2.5 text-left transition hover:border-white/20 hover:bg-[#1a2420]"
+      [class.category-tab--active]="selectedCategory() === category.id"
+      [attr.aria-selected]="selectedCategory() === category.id"
+      [attr.aria-controls]="'items-' + category.id"
+      [style.--category-accent]="category.accent"
+      role="tab"
+      type="button"
+      (click)="categorySelected.emit(category.id)"
+    >
+      <span
+        class="grid h-8 w-8 shrink-0 place-items-center rounded border border-white/10 bg-black/20 font-display text-xs font-bold text-[color:var(--category-accent)]"
+        >{{ category.emblem }}</span
+      >
+      <span class="min-w-0">
+        <span class="block text-xs font-bold text-slate-100">{{ category.label }}</span>
+        <span class="block text-[10px] tabular-nums text-slate-500"
+          >{{ categoryPowers()[category.id] | number: '1.0-0' }} power</span
+        >
+      </span>
+    </button>
+  }
+</nav>

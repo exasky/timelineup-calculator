@@ -1,0 +1,155 @@
+<div class="min-h-screen text-slate-100">
+  <app-power-banner
+    [totalPower]="totalPower()"
+    [shareStatus]="shareStatus()"
+    (resetBuild)="resetBuild()"
+    (maxAllLevels)="maxAllLevels()"
+    (saveShare)="saveAndShare()"
+  />
+
+  <main class="mx-auto w-full max-w-[1500px] px-4 pb-14 pt-7 sm:px-6 lg:px-10">
+    <section
+      class="mb-7 flex flex-col gap-5 border-b border-white/[0.08] pb-6 md:flex-row md:items-end md:justify-between"
+    >
+      <div>
+        <p
+          class="mb-2 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-300"
+        >
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-300 shadow-[0_0_12px_#6ee7b7]"></span>
+          Build simulator <span class="text-slate-600">/</span> Preview
+        </p>
+        <h1
+          class="dashboard-title font-display text-4xl font-bold leading-none text-white sm:text-5xl"
+        >
+          Shape your timeline.
+        </h1>
+        <p class="mt-3 max-w-xl text-sm leading-6 text-slate-400">
+          A working roster of heroes, allies, and upgrades. Tune a build and watch its power shift.
+        </p>
+      </div>
+
+      <div class="flex gap-5 border-l border-white/10 pl-4 sm:gap-8 sm:pl-6">
+        <div>
+          <p class="text-[9px] font-bold uppercase tracking-[0.14em] text-slate-500">Roster</p>
+          <p class="mt-1 font-display text-2xl font-bold tabular-nums text-slate-200">
+            {{ buildStateCount() }}
+          </p>
+        </div>
+        <div>
+          <p class="text-[9px] font-bold uppercase tracking-[0.14em] text-slate-500">Included</p>
+          <p class="mt-1 font-display text-2xl font-bold tabular-nums text-emerald-200">
+            {{ enabledCount()
+            }}<span class="ml-1 text-xs font-medium text-slate-600">/ {{ buildStateCount() }}</span>
+          </p>
+        </div>
+        <div>
+          <p class="text-[9px] font-bold uppercase tracking-[0.14em] text-slate-500">Selected</p>
+          <p class="mt-1 font-display text-2xl font-bold text-amber-100">
+            {{ selectedCategoryLabel }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Item category selector">
+      <div class="mb-3 flex items-center justify-between gap-3">
+        <h2 class="text-xs font-bold uppercase tracking-[0.14em] text-slate-300">
+          Roster categories
+        </h2>
+        <span class="text-[10px] font-medium uppercase tracking-[0.1em] text-slate-600"
+          >{{ visibleItems().length }} entries</span
+        >
+      </div>
+      <app-category-tabs
+        [categories]="categories"
+        [selectedCategory]="selectedCategory()"
+        [categoryPowers]="categoryPowers()"
+        (categorySelected)="selectCategory($event)"
+      />
+    </section>
+
+    <section class="mt-6" [attr.aria-labelledby]="'heading-' + selectedCategory()">
+      @if (selectedCategory() === 'talents') {
+        <app-talent-tree />
+      } @else {
+        <div class="mb-4 flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2
+              class="font-display text-2xl font-bold text-white"
+              [id]="'heading-' + selectedCategory()"
+            >
+              {{ selectedCategoryLabel }}
+            </h2>
+            <p class="mt-1 text-xs text-slate-500">
+              @if (selectedCategory() === 'cards') {
+                Primary stats lock at their cap; excess levels convert to damage.
+              } @else {
+                Estimated contribution by level and equipped special power.
+              }
+            </p>
+          </div>
+          <p class="text-xs text-slate-400">
+            <span class="font-semibold text-emerald-200">{{
+              categoryPowers()[selectedCategory()] | number: '1.0-0'
+            }}</span>
+            category power
+          </p>
+        </div>
+
+        @if (selectedCategory() === 'cards') {
+          <div
+            class="mb-4 flex flex-wrap gap-x-5 gap-y-2 border-y border-white/[0.07] py-3 text-[10px] font-semibold uppercase tracking-[0.08em] text-slate-500"
+          >
+            @for (bonus of cardBonusEntries(); track bonus.stat) {
+              <span
+                >{{ bonus.label }}
+                <strong class="ml-1 text-slate-200">{{ bonus.value }}</strong></span
+              >
+            } @empty {
+              <span>No active card bonuses</span>
+            }
+          </div>
+        }
+
+        <div
+          class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+          role="tabpanel"
+          [id]="'items-' + selectedCategory()"
+          [attr.aria-labelledby]="'heading-' + selectedCategory()"
+        >
+          @for (entry of visibleItems(); track entry.item.id; let index = $index) {
+            <app-item-card
+              [item]="entry.item"
+              [level]="entry.level"
+              [enabled]="entry.enabled"
+              [power]="entry.power"
+              [cardCalculation]="entry.cardCalculation"
+              [style.animation-delay.ms]="index * 45"
+              (levelChange)="updateLevel(entry.item.id, $event)"
+              (enabledChange)="toggleItem(entry.item.id)"
+            />
+          } @empty {
+            <p
+              class="col-span-full rounded-lg border border-dashed border-white/10 p-8 text-center text-sm text-slate-500"
+            >
+              No entries in this category yet.
+            </p>
+          }
+        </div>
+      }
+    </section>
+
+    <footer
+      class="mt-10 flex flex-col gap-2 border-t border-white/[0.08] pt-4 text-[10px] text-slate-600 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <span
+        >TimelineUp build calculator <span class="text-slate-700">·</span> Approximate power
+        model</span
+      >
+      <span
+        >Illustrative roster data <span class="text-slate-700">·</span> Levels save locally on this
+        device</span
+      >
+    </footer>
+  </main>
+</div>

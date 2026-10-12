@@ -1,13 +1,11 @@
-import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CalculatorDashboardComponent } from './features/calculator/calculator-dashboard.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
+  imports: [CalculatorDashboardComponent],
+  template: '<app-calculator-dashboard />',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss',
 })
-export class App {
-  protected readonly title = signal('timelineup-calculator');
-}
+export class App { }

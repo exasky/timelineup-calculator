@@ -1,0 +1,255 @@
+:host {
+  display: block;
+}
+
+.talent-tree-view {
+  overflow: hidden;
+  border: 1px solid rgba(191, 214, 228, 0.14);
+  border-radius: 8px;
+  background: #111a21;
+}
+
+.talent-tree-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid rgba(191, 214, 228, 0.12);
+}
+
+.eyebrow {
+  margin: 0;
+  color: #8ec8b2;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.talent-tree-header h3,
+.selected-talent h4 {
+  margin: 0.2rem 0 0;
+  color: #f3f6f4;
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.tree-subtitle {
+  margin: 0.45rem 0 0;
+  color: #9aa9b2;
+  font-size: 0.75rem;
+}
+
+.rank-total {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 90px;
+  padding-left: 0.8rem;
+  border-left: 1px solid rgba(191, 214, 228, 0.18);
+  color: #9aa9b2;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.rank-total strong {
+  color: #f2c35e;
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 1.45rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.talent-tree-board {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 900px);
+  height: 60vh;
+  max-height: 60vh;
+  margin-inline: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #dcebf4;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 47px, rgba(70, 112, 143, 0.045) 48px),
+    repeating-linear-gradient(90deg, transparent 0 47px, rgba(70, 112, 143, 0.045) 48px);
+}
+
+.talent-tree-links {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.talent-tree-links line {
+  stroke: #72b832;
+  stroke-linecap: round;
+  stroke-width: 1.25;
+}
+
+.talent-node {
+  position: absolute;
+  display: grid;
+  width: clamp(66px, 8vw, 88px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 5px solid #215f9b;
+  border-radius: 50%;
+  background: #1685d7;
+  box-shadow:
+    inset 0 0 0 4px #73bb32,
+    inset 0 0 0 8px #215f9b,
+    0 3px 0 rgba(20, 48, 76, 0.48);
+  color: #fff;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.talent-node--selected {
+  outline: 3px solid #f2c35e;
+  outline-offset: 3px;
+}
+
+.talent-node--core {
+  width: clamp(82px, 10vw, 108px);
+  border-color: #d77e26;
+  background: #efa42e;
+  box-shadow:
+    inset 0 0 0 5px #68ae32,
+    inset 0 0 0 10px #d77e26,
+    0 4px 0 rgba(107, 64, 24, 0.45);
+}
+
+.talent-node-symbol {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+.talent-node--core .talent-node-symbol {
+  color: #2b381f;
+}
+
+.talent-node-rank {
+  position: absolute;
+  bottom: -0.55rem;
+  min-width: 3.1rem;
+  padding: 0.04rem 0.3rem;
+  border: 1px solid rgba(14, 36, 55, 0.75);
+  border-radius: 999px;
+  background: #f4f8fa;
+  color: #183148;
+  font-size: 0.68rem;
+  font-weight: 900;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.talent-node:focus-visible,
+.rank-control button:focus-visible {
+  outline: 3px solid #f2c35e;
+  outline-offset: 4px;
+}
+
+.selected-talent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid rgba(191, 214, 228, 0.12);
+}
+
+.selected-talent-copy {
+  min-width: 0;
+}
+
+.selected-talent h4 {
+  font-size: 1.35rem;
+}
+
+.selected-talent-copy > p:last-child {
+  margin: 0.4rem 0 0;
+  color: #9aa9b2;
+  font-size: 0.75rem;
+}
+
+.selected-talent-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.talent-contribution {
+  display: grid;
+  gap: 0.15rem;
+  color: #9aa9b2;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.talent-contribution strong {
+  color: #f2c35e;
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.rank-control {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.rank-control button {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid rgba(142, 200, 178, 0.35);
+  border-radius: 6px;
+  background: #1d302e;
+  color: #c8f1db;
+  font-size: 1.25rem;
+}
+
+.rank-control button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.rank-control > strong {
+  min-width: 3.2rem;
+  color: #f3f6f4;
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 1.2rem;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .talent-tree-header {
+    padding-inline: 0.9rem;
+  }
+
+  .talent-node {
+    width: 66px;
+  }
+
+  .talent-node--core {
+    width: 84px;
+  }
+
+  .selected-talent {
+    align-items: stretch;
+    flex-direction: column;
+    padding-inline: 0.9rem;
+  }
+
+  .selected-talent-controls {
+    justify-content: space-between;
+  }
+}

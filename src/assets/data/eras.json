@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Dawn Age",
+    "multiplier": 1
+  },
+  {
+    "id": 2,
+    "name": "Clockwork Age",
+    "multiplier": 1.5
+  },
+  {
+    "id": 3,
+    "name": "Nova Age",
+    "multiplier": 2.25
+  }
+]

@@ -1,0 +1,141 @@
+                            [ Global Damage 1 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Crowd Damage 1 ]                                [ Hero Damage 1 ]
+            |                                               |
+  [ Crowd Crit Damage Mult 1 ]                    [ Hero Crit Damage Mult 1 ]
+            |                                               |
+  [ Crowd Double Shot Chance 1 ]                  [ Hero Double Shot Chance 1 ]
+            |                                               |
+            +-----------------------+-----------------------+
+                                    |
+                  [ Warrior Upgrade Max Level Increase 1 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Champion Damage 1 ]                             [ Pet Damage 1 ]
+            |                                               |
+  [ Champion Crit Damage Mult 1 ]                 [ Pet Crit Damage Mult 1 ]
+            |                                               |
+  [ Champion Double Shot Chance 1 ]               [ Pet Double Shot Chance 1 ]
+            |                                               |
+            +-----------------------+-----------------------+
+                                    |
+                     [ Battle Damage Multiplier 1 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Crowd Damage 2 ]                                [ Pet Damage 2 ]
+            |                                               |
+  [ Crowd Critical Hit Chance 1 ]                 [ Pet Critical Hit Chance 1 ]
+            |                                               |
+  [ Crowd Triple Shot Chance 1 ]                  [ Pet Triple Shot Chance 1 ]
+            |                                               |
+            +-----------------------+-----------------------+
+                                    |
+               [ Time Machine Start Level Increase 1 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Champion Damage 2 ]                             [ Hero Damage 2 ]
+            |                                               |
+  [ Champion Critical Hit Chance 1 ]              [ Hero Critical Hit Chance 1 ]
+            |                                               |
+  [ Champion Triple Shot Chance 1 ]               [ Hero Triple Shot Chance 1 ]
+            |                                               |
+            +-----------------------+-----------------------+
+                                    |
+                    [ Dungeon Damage Multiplier 1 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Pet Damage 3 ]                                  [ Hero Damage 3 ]
+            |                                               |
+  [ Pet Crit Damage Mult 2 ]                      [ Hero Crit Damage Mult 2 ]
+            |                                               |
+  [ Pet Double Shot Chance 2 ]                    [ Hero Double Shot Chance 2 ]
+            |                                               |
+            +-----------------------+-----------------------+
+                                    |
+                  [ Warrior Upgrade Max Level Increase 2 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Champion Damage 3 ]                             [ Crowd Damage 3 ]
+            |                                               |
+  [ Champion Crit Damage Mult 2 ]                 [ Crowd Crit Damage Mult 2 ]
+            |                                               |
+  [ Champion Double Shot Chance 2 ]               [ Crowd Double Shot Chance 2 ]
+            |                                               |
+            +-----------------------+-----------------------+
+                                    |
+                      [ Tower Damage Multiplier 2 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Crowd Damage 4 ]                                [ Hero Damage 4 ]
+            |                                               |
+  [ Crowd Critical Hit Chance 2 ]                 [ Hero Critical Hit Chance 2 ]
+            |                                               |
+  [ Crowd Triple Shot Chance 2 ]                  [ Hero Triple Shot Chance 2 ]
+            |                                               |
+            +-----------------------+-----------------------+
+                                    |
+               [ Time Machine Start Level Increase 2 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Champion Damage 4 ]                             [ Pet Damage 4 ]
+            |                                               |
+  [ Champion Critical Hit Chance 2 ]              [ Pet Critical Hit Chance 2 ]
+            |                                               |
+  [ Champion Triple Shot Chance 2 ]               [ Pet Triple Shot Chance 2 ]
+            |                                               |
+            +-----------------------+-----------------------+
+                                    |
+                      [ Hero Damage Multiplier 1 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Crowd Damage 5 ]                                [ Pet Damage 5 ]
+            |                                               |
+  [ Crowd Crit Damage Mult 3 ]                    [ Pet Crit Damage Mult 3 ]
+            |                                               |
+  [ Crowd Double Shot Chance 3 ]                  [ Pet Double Shot Chance 3 ]
+            |                                               |
+            +-----------------------+-----------------------+
+                                    |
+                  [ Warrior Upgrade Max Level Increase 3 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Champion Damage 5 ]                             [ Hero Damage 5 ]
+            |                                               |
+  [ Champion Crit Damage Mult 3 ]                 [ Hero Crit Damage Mult 3 ]
+            |                                               |
+  [ Champion Double Shot Chance 3 ]               [ Hero Double Shot Chance 3 ]
+            |                                               |
+            +-----------------------+-----------------------+
+                                    |
+                    [ Max Pickaxe Limit Increase 1 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Pet Damage 6 ]                                  [ Hero Damage 6 ]
+            |                                               |
+  [ Pet Crit Hit Chance 3 ]                       [ Hero Crit Hit Chance 3 ]
+            |                                               |
+  [ Pet Triple Shot Chance 3 ]                    [ Hero Triple Shot Chance 3 ]
+            |                                               |
+            +-----------------------+-----------------------+
+                                    |
+               [ Time Machine Start Level Increase 3 ]
+                                    |
+            +-----------------------+-----------------------+
+            |                                               |
+  [ Champion Damage 6 ]                             [ Crowd Damage 6 ]
+            |                                               |
+  [ Champion Crit Hit Chance 3 ]                  [ Crowd Crit Hit Chance 3 ]
+            |                                               |
+  [ Champion Triple Shot Chance 3 ]               [ Crowd Triple Shot Chance 3 ]
