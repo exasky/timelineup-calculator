@@ -1,4 +1,17 @@
-export type CardRarity = 'common' | 'rare' | 'epic' | 'legendary' | 'mythic';
+import { Rarity } from "../../../core/models/rarity.model";
+
+
+export const CARD_RARITY_RULES: Record<
+  Rarity,
+  { primaryLevelCap: number; flatDamagePerLevel: number }
+> = {
+  common: { primaryLevelCap: 10, flatDamagePerLevel: 5 },
+  rare: { primaryLevelCap: 10, flatDamagePerLevel: 10 },
+  epic: { primaryLevelCap: 7, flatDamagePerLevel: 20 },
+  legendary: { primaryLevelCap: 7, flatDamagePerLevel: 50 },
+  mythic: { primaryLevelCap: 7, flatDamagePerLevel: 100 },
+  immortal: { primaryLevelCap: 7, flatDamagePerLevel: 500 },
+};
 
 export type CardPrimaryStatType =
   | 'damage'
@@ -19,13 +32,26 @@ export type CardPrimaryStatType =
   | 'pet_clone_damage'
   | 'hero_shockwave_damage';
 
+export type CardSpecialEffect =
+  | {
+    type: 'periodic_hero_shockwave';
+    intervalSeconds: number;
+    description: string;
+  }
+  | {
+    type: 'periodic_pet_clone';
+    intervalSeconds: number;
+    durationSeconds: number;
+    description: string;
+  };
+
 type CardPrimaryStatFormat = 'number' | 'percentage';
 
 export const CARD_PRIMARY_STAT_METADATA: Record<
   CardPrimaryStatType,
   { label: string; format: CardPrimaryStatFormat }
 > = {
-  damage: { label: 'damage', format: 'number' },
+  damage: { label: 'damage', format: 'percentage' },
   income: { label: 'income', format: 'percentage' },
   warrior_clone_chance: { label: 'clone chance', format: 'percentage' },
   crit_chance: { label: 'crit chance', format: 'percentage' },
@@ -34,47 +60,44 @@ export const CARD_PRIMARY_STAT_METADATA: Record<
   fire_rate: { label: 'fire rate', format: 'percentage' },
   warrior_upgrade: { label: 'warrior upgrade', format: 'number' },
   idle_price_discount: { label: 'idle price discount', format: 'percentage' },
-  diamond_drop_chance_from_enemy: {
-    label: 'diamond drop chance from enemy',
-    format: 'percentage',
-  },
+  diamond_drop_chance_from_enemy: { label: 'diamond drop chance from enemy', format: 'percentage' },
   diamond_double_drop_chance: { label: 'diamond double drop chance', format: 'percentage' },
   add_warrior: { label: 'additional warrior', format: 'number' },
-  capacity: { label: 'capacity', format: 'number' },
-  level_end_blowk_weakening: { label: 'level-end boss weakening', format: 'percentage' },
+  capacity: { label: 'capacity', format: 'percentage' },
+  level_end_blowk_weakening: { label: 'level-end block weakening', format: 'percentage' },
   critical_hit_chance: { label: 'critical hit chance', format: 'percentage' },
-  pet_clone_damage: { label: 'pet clone damage', format: 'number' },
-  hero_shockwave_damage: { label: 'hero shockwave damage', format: 'number' },
+  pet_clone_damage: { label: 'pet clone damage', format: 'percentage' },
+  hero_shockwave_damage: { label: 'hero shockwave damage', format: 'percentage' },
 };
 
-export function formatCardPrimaryStatValue(
-  statType: CardPrimaryStatType,
-  value: number,
-): string {
+export function formatCardPrimaryStatValue(statType: CardPrimaryStatType, value: number): string {
   const formattedValue = CARD_PRIMARY_STAT_METADATA[statType].format === 'percentage'
     ? `${Number(value.toFixed(2))}%`
     : value.toLocaleString();
-
   return `+${formattedValue}`;
 }
+
+export type Level = number;
+export type StatValue = number;
 
 export interface Card {
   id: string;
   name: string;
-  rarity: CardRarity;
-  level: number;
-  maxLevel: number;
+  rarity: Rarity;
+  imageUrl?: string;
   primaryStatType: CardPrimaryStatType;
-  primaryStatValuePerLevel: number;
-  maxLevelCapForPrimary: number;
-  flatDamageBonusAfterCap: number;
+  primaryStatValuesByLevel: Record<Level, StatValue> | null;
+  specialEffect?: CardSpecialEffect;
 }
 
 export interface CardCalculation {
   cardId: string;
   level: number;
+  primaryLevelCap: number;
+  flatDamagePerLevel: number;
   primaryStatType: CardPrimaryStatType;
   primaryStatBonus: number;
+  hasPrimaryStatValue: boolean;
   damageAddition: number;
   hasReachedPrimaryCap: boolean;
   isConvertingToDamage: boolean;

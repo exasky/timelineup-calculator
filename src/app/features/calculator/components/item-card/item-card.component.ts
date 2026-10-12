@@ -3,10 +3,10 @@ import { Component, computed, input, output } from '@angular/core';
 
 import {
   CardCalculation,
-  CardRarity,
   CARD_PRIMARY_STAT_METADATA,
   formatCardPrimaryStatValue,
-} from '../../../../core/models/card.model';
+} from '../../../cards/models/card.model';
+import { Rarity } from '../../../../core/models/rarity.model';
 import { BUILD_CATEGORIES, CalculatorItem } from '../../models/calculator-item.model';
 
 @Component({
@@ -30,12 +30,13 @@ export class ItemCardComponent {
     this.item().maxLevel > 0 ? (this.level() / this.item().maxLevel) * 100 : 0,
   );
   readonly rarityAccent = computed(() => {
-    const colors: Record<CardRarity, string> = {
+    const colors: Record<Rarity, string> = {
       common: '#aab4ad',
       rare: '#68a9e8',
       epic: '#c28be8',
       legendary: '#edb853',
       mythic: '#ef7e9b',
+      immortal: '#f5f0d0',
     };
     return colors[this.item().card?.rarity ?? 'common'];
   });
@@ -46,13 +47,16 @@ export class ItemCardComponent {
     if (!card || !calculation) {
       return '';
     }
+    if (!calculation.hasPrimaryStatValue) {
+      return 'Stat value not configured';
+    }
 
     const stat = CARD_PRIMARY_STAT_METADATA[card.primaryStatType];
     return `${formatCardPrimaryStatValue(card.primaryStatType, calculation.primaryStatBonus)} ${stat.label}`;
   }
 
   overflowBonusLabel(): string {
-    const bonus = this.item().card?.flatDamageBonusAfterCap ?? 0;
+    const bonus = this.cardCalculation()?.flatDamagePerLevel ?? 0;
     return `+${bonus.toLocaleString()} damage per level`;
   }
 

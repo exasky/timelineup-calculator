@@ -1,5 +1,5 @@
-import { HeroGameItem } from '../../../core/calculators/hero-power.calculator';
-import { Card } from '../../../core/models/card.model';
+import { GameItem } from '../../../core/models/game-item.interface';
+import { Card } from '../../cards/models/card.model';
 
 export const BUILD_CATEGORIES = [
   { id: 'heroes', label: 'Heroes', emblem: '01', accent: '#f4bd50' },
@@ -13,10 +13,11 @@ export const BUILD_CATEGORIES = [
 export type BuildCategory = (typeof BUILD_CATEGORIES)[number]['id'];
 export type BuildCategoryDefinition = (typeof BUILD_CATEGORIES)[number];
 
-export interface CalculatorItem extends HeroGameItem {
+export interface CalculatorItem extends GameItem {
   category: BuildCategory;
   role: string;
   emblem: string;
+  specialPower?: number;
   specialPowerDescription?: string;
   card?: Card;
 }

@@ -100,7 +100,7 @@
           @for (bonus of cardBonusEntries(); track bonus.stat) {
             <span
               >{{ bonus.label }}
-              <strong class="ml-1 text-slate-200">+{{ bonus.value }}</strong></span
+              <strong class="ml-1 text-slate-200">{{ bonus.value }}</strong></span
             >
           } @empty {
             <span>No active card bonuses</span>
@@ -122,7 +122,7 @@
             [power]="entry.power"
             [cardCalculation]="entry.cardCalculation"
             [style.animation-delay.ms]="index * 45"
-            (levelChange)="updateLevel(entry.item, $event)"
+            (levelChange)="updateLevel(entry.item.id, $event)"
             (enabledChange)="toggleItem(entry.item.id)"
           />
         } @empty {

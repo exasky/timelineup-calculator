@@ -8,8 +8,20 @@
     <div class="flex min-w-0 items-center gap-3">
       <span
         class="item-emblem grid h-12 w-12 shrink-0 place-items-center rounded-md border text-sm font-bold"
-        >{{ item().emblem }}</span
       >
+        @if (item().card?.imageUrl; as imageUrl) {
+          <img
+            class="item-emblem-image"
+            [src]="imageUrl"
+            alt=""
+            width="48"
+            height="48"
+            loading="lazy"
+          />
+        } @else {
+          {{ item().emblem }}
+        }
+      </span>
       <div class="min-w-0">
         <p class="truncate text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500">
           {{ item().role }}
@@ -48,17 +60,20 @@
         >
       </div>
       <p class="mt-2 text-sm font-bold text-slate-100">{{ primaryBonusLabel() }}</p>
+      @if (card.specialEffect; as effect) {
+        <p class="mt-1 text-[10px] leading-4 text-slate-300">{{ effect.description }}</p>
+      }
       @if (cardCalculation()?.isConvertingToDamage) {
         <p class="mt-1 text-[10px] font-medium text-amber-200">
           Primary capped · {{ overflowBonusLabel() }}
         </p>
       } @else if (cardCalculation()?.hasReachedPrimaryCap) {
         <p class="mt-1 text-[10px] font-medium text-amber-200">
-          Primary stat reached cap at level {{ card.maxLevelCapForPrimary }}
+          Primary stat reached cap at level {{ cardCalculation()?.primaryLevelCap }}
         </p>
       } @else {
         <p class="mt-1 text-[10px] text-slate-500">
-          Primary cap at level {{ card.maxLevelCapForPrimary }}
+          Primary cap at level {{ cardCalculation()?.primaryLevelCap }}
         </p>
       }
     </div>
@@ -130,9 +145,9 @@
       <span class="text-[9px] font-bold uppercase tracking-[0.13em] text-slate-500">{{
         item().card ? 'Damage added' : 'Power contribution'
       }}</span>
-      <strong class="font-display text-lg font-bold tabular-nums text-[color:var(--item-accent)]">{{
-        power() | number: '1.0-0'
-      }}</strong>
+      <strong class="font-display text-lg font-bold tabular-nums text-[color:var(--item-accent)]"
+        >{{ power() | number: '1.0-0' }}%</strong
+      >
     </div>
     <div
       class="h-1 overflow-hidden rounded-full bg-black/30"

@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Card } from '../models/card.model';
 import { Era, Upgrade } from '../models/timelineup.model';
 
 @Injectable({ providedIn: 'root' })
@@ -15,10 +14,6 @@ export class GameDataService {
 
   loadEras(): Observable<Era[]> {
     return this.http.get<Era[]>('/assets/data/eras.json');
-  }
-
-  loadCards(): Observable<Card[]> {
-    return this.http.get<Card[]>('/assets/data/cards.json');
   }
 
   calculateUpgradeCost(upgrade: Upgrade, fromLevel: number, toLevel: number): number {

@@ -27,6 +27,13 @@
   font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
 }
 
+.item-emblem-image {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
 .special-power {
   border-top-color: color-mix(in srgb, var(--item-accent) 20%, transparent);
 }
