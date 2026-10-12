@@ -6,12 +6,13 @@ import {
   CARD_PRIMARY_STAT_METADATA,
   formatCardPrimaryStatValue,
 } from '../../../cards/models/card.model';
-import { Rarity } from '../../../../core/models/rarity.model';
+import { Rarity } from '@core/models/rarity.model';
 import { BUILD_CATEGORIES, CalculatorItem } from '../../models/calculator-item.model';
+import { AssetUrlPipe } from '@core/pipe/asset-url.pipe';
 
 @Component({
   selector: 'app-item-card',
-  imports: [DecimalPipe],
+  imports: [DecimalPipe, AssetUrlPipe],
   templateUrl: './item-card.component.html',
   styleUrl: './item-card.component.scss',
 })

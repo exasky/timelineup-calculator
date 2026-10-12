@@ -3,17 +3,19 @@ import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Era, Upgrade } from '../models/timelineup.model';
+import { BaseHrefService } from './base-href.service';
 
 @Injectable({ providedIn: 'root' })
 export class GameDataService {
   private readonly http = inject(HttpClient);
+  private baseHref = inject(BaseHrefService);
 
   loadUpgrades(): Observable<Upgrade[]> {
-    return this.http.get<Upgrade[]>('/assets/data/upgrades.json');
+    return this.http.get<Upgrade[]>(`${this.baseHref.getBaseHref()}/assets/data/upgrades.json`);
   }
 
   loadEras(): Observable<Era[]> {
-    return this.http.get<Era[]>('/assets/data/eras.json');
+    return this.http.get<Era[]>(`${this.baseHref.getBaseHref()}/assets/data/eras.json`);
   }
 
   calculateUpgradeCost(upgrade: Upgrade, fromLevel: number, toLevel: number): number {

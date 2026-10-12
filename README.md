@@ -5,6 +5,8 @@ Hosted on [GitHub Pages](https://exasky.github.io/timelineup-calculator/).
 
 This project is designed to help players optimize their upgrades, card builds, and talent trees without manual calculations, offering a fast, fluid, and responsive client-side interface.
 
+Calculator can be tested at : https://exasky.github.io/timelineup-calculator/
+
 ---
 
 ## 🚀 Key Features

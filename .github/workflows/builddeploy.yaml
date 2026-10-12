@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - feat/init-system
   workflow_dispatch:
 
 permissions:
@@ -25,7 +24,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build
-        run: npm run build
+        run: npm run build:github
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -12,7 +12,7 @@
         @if (item().card?.imageUrl; as imageUrl) {
           <img
             class="item-emblem-image"
-            [src]="imageUrl"
+            [src]="imageUrl | assetUrl"
             alt=""
             width="48"
             height="48"
