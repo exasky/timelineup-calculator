@@ -1,59 +1,50 @@
-# TimelineupCalculator
+# 📊 TimelineUp Build Calculator
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.26.
+A modern, high-performance, and 100% static build calculator for the mobile idle game **TimelineUp**.
+Hosted on [GitHub Pages](https://exasky.github.io/timelineup-calculator/).
 
-## Development server
+This project is designed to help players optimize their upgrades, card builds, and talent trees without manual calculations, offering a fast, fluid, and responsive client-side interface.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## 🚀 Key Features
+
+- **Real-Time Power Calculation:** Instant estimation of total power and aggregated multipliers (Damage, Fire Rate, Crit Chance, Era Multipliers, etc.).
+- **Card System Logic:** Implements rarity-based level caps (_Common, Rare, Epic, Legendary, Mythic, Immortal_) with automatic conversion of primary stats into flat damage bonuses once the threshold is reached.
+- **Talent Tree Simulation:** Interactive simulation of talent nodes and their cumulative bonuses grouped by category (_Heroes, Champions, Pets, Crowd_).
+- **Serverless Architecture:** Fully driven by JSON configuration files, running entirely inside the user's browser.
+- **Local Persistence:** Automatic saving of your current build loadout using the browser's `localStorage`.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Angular](https://angular.dev/) (Standalone Components architecture, strict TypeScript typing).
+- **Reactivity:** Angular Signals for blazing-fast instant recalculations.
+- **Styling:** Tailwind CSS.
+- **Deployment:** GitHub Pages (via `angular-cli-ghpages`).
+
+---
+
+## 📁 Data Structure (JSON)
+
+All game statistics and configurations are externalized into JSON files located under `src/assets/data/`, making it easy to update game balancing or add new items:
+
+```text
+src/assets/data/
+├── cards.json      # Card definitions and base stat types
+├── talents.json    # Talent tree nodes and scaling rules
+└── ...             # Future data categories (Heroes, Champions, Pets, Mounts...)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 💻 Developer Guide
 
-## Code scaffolding
+If you are a developer looking to run, test, or contribute to the source code, please check our Developer Guide.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🤝 Contributing
 
-```bash
-ng generate component component-name
-```
+Game data updates rely on the community! If you notice any outdated card statistics or talent node values, check out our Contributing Guide.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📄 License
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is open-source under the MIT License.
